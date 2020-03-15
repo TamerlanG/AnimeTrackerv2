@@ -1,5 +1,8 @@
 module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
+  presets: [
+    'module:metro-react-native-babel-preset',
+    'module:react-native-dotenv'
+  ],
   plugins: [
     [
       'module-resolver',
@@ -18,6 +21,7 @@ module.exports = {
           views: './src/views',
           components: './src/components',
           store: './src/store',
+          config: './src/config.js',
         },
       },
     ],
