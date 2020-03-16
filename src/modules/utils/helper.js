@@ -4,6 +4,25 @@
 
 import dayjs from 'dayjs'
 
+
+/** VARIABLES */
+const seasons = {
+    SUMMER: 'summer',
+    WINTER: 'winter',
+    SPRING: 'spring',
+    FALL: 'fall'
+}
+
+const days = {
+    MONDAY: "monday",
+    TUESDAY: "tuesday",
+    WEDNESDAY: "wednesday",
+    THURSDAY: "thursday",
+    FRIDAY: "friday",
+    SATURDAY: "saturday",
+    SUNDAY: "sunday"
+}
+
  /**
   * Void -> Season
   * returns the current anime season which can either be: 
@@ -15,23 +34,39 @@ import dayjs from 'dayjs'
 export function getCurrentSeason() {
     // Months start from 0 to 11 (Jan to Dec)
     const current_month = dayjs().month();
-    let season;
+    let currentSeason;
 
     if(current_month >= 0 && current_month <= 2){
-        season = "winter" 
+        currentSeason = seasons.WINTER; 
     }
 
     if(current_month >= 3 && current_month <= 5){
-        season="spring"
+        currentSeason=seasons.SPRING;
     }
 
     if(current_month >= 6 && current_month <= 8){
-        season="summer"
+        currentSeason=seasons.SUMMER;
     }
 
     if(current_month >= 9 && current_month <= 11){
-        season="fall"
+        currentSeason=seasons.FALL;
     }
 
-    return season;
+    return currentSeason;
+}
+/**
+ * Void -> String
+ * returns the current day which can either be: 
+ * - monday
+ * - tuesday
+ * - wednesday
+ * - thursday
+ * - friday
+ * - saturday
+ * - sunday
+ */
+export function getCurrentDay(){
+    currentDate = new Date();
+
+    const day = days.keys(days)[currentDate.getDay()];
 }

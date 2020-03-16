@@ -5,11 +5,13 @@ import config from 'config';
 /* REDUX */
 import { connect } from 'react-redux';
 import { fetchCurrentSeason } from 'store/season/season.action.js';
+import { fetchTodaySchedule } from 'store/schedule/schedule.action.js';
 
 const Library = props => {
 
   useEffect(() => {
     props.fetchCurrentSeason();
+    props.fetchTodaySchedule();
   }, [])
 
   return (
@@ -24,7 +26,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  fetchCurrentSeason
+  fetchCurrentSeason,
+  fetchTodaySchedule
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Library)
