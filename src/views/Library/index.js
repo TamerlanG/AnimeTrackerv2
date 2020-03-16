@@ -1,14 +1,30 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useEffect } from 'react'
+import { SafeAreaView, Text } from 'react-native'
 import config from 'config';
 
+/* REDUX */
+import { connect } from 'react-redux';
+import { fetchCurrentSeason } from 'store/season/season.action.js';
 
-const Library = () => {
+const Library = props => {
+
+  useEffect(() => {
+    props.fetchCurrentSeason();
+  }, [])
+
   return (
-    <View>
-      <Text>This is the library screen</Text>
-    </View>
+    <SafeAreaView>
+      <Text>{config.API_URL}</Text>
+    </SafeAreaView>
   )
 }
 
-export default Library
+const mapStateToProps = state => ({
+  
+});
+
+const mapDispatchToProps = {
+  fetchCurrentSeason
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Library)

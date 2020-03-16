@@ -22,6 +22,8 @@ module.exports = {
           components: './src/components',
           store: './src/store',
           config: './src/config.js',
+          utils: './src/modules/utils',
+          services: './src/services'
         },
       },
     ],

@@ -49,7 +49,7 @@ const Routes = () => {
     inactiveTintColor: 'gray',
   })
   return (
-    <Tab.Navigator screenOptions={handleTabScreenOptions} tabBarOptions={handleTabBarOptions}>
+    <Tab.Navigator screenOptions={handleTabScreenOptions} tabBarOptions={handleTabBarOptions} initialRouteName="Discover">
       <Tab.Screen name="Library" component={Library} />
       <Tab.Screen name="Discover" component={Recommendations} />
       <Tab.Screen name="Search" component={Search} />

@@ -1,4 +1,6 @@
 import {combineReducers} from 'redux';
-import test from 'store/test/test.reducer';
+import season from 'store/season/season.reducer.js';
 
-export default combineReducers({test});
+export default combineReducers({
+    season
+});
