@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-import { FETCH, DONE, FAIL, CURRENT_SEASON} from 'store/constants';
+import { CURRENT_SEASON, DONE, FAIL, FETCH, SEASON } from 'store/constants';
 
 export const initialState = {
     current_season: {
@@ -8,7 +8,11 @@ export const initialState = {
         success: false,
         failed: false,
         data: null
-    }
+    },
+    loading: false,
+    success: false,
+    failed: false,
+    data: null
 };
 
 export default handleActions(
@@ -36,6 +40,21 @@ export default handleActions(
             loading: false,
             failed: true
         }
+      }),
+      [SEASON + FETCH]: state => ({
+        ...state,
+        loading: true        
+        }),
+      [SEASON + FETCH + DONE]: (state, { payload }) => ({
+        ...state,
+        loading: false,
+        success: true,
+        data: payload
+      }),
+      [SEASON + FETCH + FAIL]: state => ({
+        ...state,
+        loading: false,
+        failed: true
       }),
     },
     initialState

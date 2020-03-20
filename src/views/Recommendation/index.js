@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {SafeAreaView, Text} from 'react-native';
 
 const Recommendation = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>This is the recommendations screen</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 

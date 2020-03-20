@@ -12,3 +12,8 @@ export function fetchCurrentSeason_API() {
     return axios.get(`/season/${current_year}/${current_season}`)
     .then(data => data.data.anime);
 }
+
+export function fetchSeason_API({year, season}) {
+    return axios.get(`/season/${year}/${season}`)
+    .then(data => data.data.anime);
+}

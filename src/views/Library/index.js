@@ -1,22 +1,26 @@
 import React, { useEffect } from 'react'
 import { SafeAreaView, Text } from 'react-native'
-import config from 'config';
 
 /* REDUX */
 import { connect } from 'react-redux';
-import { fetchCurrentSeason } from 'store/season/season.action.js';
+import { fetchCurrentSeason, fetchSeason } from 'store/season/season.action.js';
 import { fetchTodaySchedule } from 'store/schedule/schedule.action.js';
+import { fetchAnime } from 'store/anime/anime.action.js';
+import { fetchManga } from 'store/manga/manga.action.js';
 
 const Library = props => {
 
   useEffect(() => {
-    props.fetchCurrentSeason();
-    props.fetchTodaySchedule();
+    // props.fetchCurrentSeason();
+    // props.fetchTodaySchedule();
+    // props.fetchSeason({year: 1999, season: 'summer'});
+    // props.fetchAnime({id: 23})
+    props.fetchManga({id: 23, request: 'pictures'});
   }, [])
 
   return (
     <SafeAreaView>
-      <Text>{config.API_URL}</Text>
+      <Text>This is the library screen</Text>
     </SafeAreaView>
   )
 }
@@ -27,7 +31,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchCurrentSeason,
-  fetchTodaySchedule
+  fetchTodaySchedule,
+  fetchSeason,
+  fetchAnime,
+  fetchManga
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Library)

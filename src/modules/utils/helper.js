@@ -14,13 +14,13 @@ const seasons = {
 }
 
 const days = {
+    SUNDAY: "sunday",
     MONDAY: "monday",
     TUESDAY: "tuesday",
     WEDNESDAY: "wednesday",
     THURSDAY: "thursday",
     FRIDAY: "friday",
-    SATURDAY: "saturday",
-    SUNDAY: "sunday"
+    SATURDAY: "saturday"
 }
 
  /**
@@ -57,16 +57,18 @@ export function getCurrentSeason() {
 /**
  * Void -> String
  * returns the current day which can either be: 
+ * - sunday
  * - monday
  * - tuesday
  * - wednesday
  * - thursday
  * - friday
  * - saturday
- * - sunday
  */
 export function getCurrentDay(){
-    currentDate = new Date();
+    const currentDate = new Date();
+    
+    const day = Object.values(days)[currentDate.getDay()];
 
-    const day = days.keys(days)[currentDate.getDay()];
+    return day;
 }

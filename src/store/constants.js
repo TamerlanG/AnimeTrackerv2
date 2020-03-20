@@ -7,9 +7,14 @@ export const SEARCH = '_SEARCH';
 export const TODAY = '_TODAY';
 
 
-export const CURRENT_SEASON = 'current_season/CURRENT_SEASON';
+export const CURRENT_SEASON = 'season/CURRENT_SEASON';
+export const SEASON = 'season/SEASON';
 
 export const SCHEDULE = 'schedule/SCHEDULE';
+
+export const ANIME = 'anime/ANIME';
+
+export const MANGA = 'manga/MANGA';
 
 
 
