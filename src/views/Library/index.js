@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { SafeAreaView, Text } from 'react-native'
 
 /* DEV */
-import { Title } from 'components/Common/Typography';
+import { Canon } from 'components/Common/Typography';
+import { Container } from 'components/Common/Container';
 
 
 /* REDUX */
@@ -14,18 +15,11 @@ import { fetchManga } from 'store/manga/manga.action.js';
 
 const Library = props => {
 
-  useEffect(() => {
-    // props.fetchCurrentSeason();
-    // props.fetchTodaySchedule();
-    // props.fetchSeason({year: 1999, season: 'summer'});
-    // props.fetchAnime({id: 23})
-    // props.fetchManga({id: 23, request: 'pictures'});
-    
-  }, [])
-
   return (
     <SafeAreaView>
-      <Title>FONTS</Title>
+      <Container>
+        <Canon>FONTS</Canon>
+      </Container>
     </SafeAreaView>
   )
 }

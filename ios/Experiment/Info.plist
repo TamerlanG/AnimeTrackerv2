@@ -24,6 +24,12 @@
 		<string>SFProDisplay-Medium.otf</string>
 		<string>Fontisto.ttf</string>
 		<string>SFProDisplay-Semibold.otf</string>
+		<string>sfprodisplay_bold.otf</string>
+		<string>SF Pro Display Bold.otf</string>
+		<string>SF Pro Display Light.otf</string>
+		<string>SF Pro Display Medium.otf</string>
+		<string>SF Pro Display Semibold.otf</string>
+		<string>SFProDisplay-Regular.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

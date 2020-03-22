@@ -72,3 +72,12 @@ export function getCurrentDay(){
 
     return day;
 }
+
+/**
+ * CapitalizeString
+ * @param str the string which will be capitalized.
+ * @return Capitalized string.
+ */
+export function CapitalizeString(str){
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}

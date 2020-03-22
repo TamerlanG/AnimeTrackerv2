@@ -15,9 +15,9 @@ import Search from 'views/Search';
 import Settings from 'views/Settings'
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const Routes = () => {
-
   const handleTabScreenOptions = ({ route }) => ({
     tabBarIcon: () => {
       const ICON_SIZE = 16;
@@ -51,11 +51,17 @@ const Routes = () => {
   return (
     <Tab.Navigator screenOptions={handleTabScreenOptions} tabBarOptions={handleTabBarOptions} initialRouteName="Discover">
       <Tab.Screen name="Library" component={Library} />
-      <Tab.Screen name="Discover" component={Recommendations} />
+      <Tab.Screen name="Discover" component={DiscoverStack} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   );
 };
+
+const DiscoverStack = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Discover" component={Recommendations} />
+  </Stack.Navigator>
+)
 
 export default Routes;
