@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Text, Platform } from 'react-native'
+
 import styled from 'styled-components';
+
 
 export const Canon = styled.Text`
     font-family: 'SFProDisplay-Semibold';
@@ -10,6 +12,7 @@ export const Canon = styled.Text`
 export const DoublePica = styled.Text`
     font-family: 'SFProDisplay-Semibold';
     font-size: 17px;
+    color: ${props => props.color ? props.color : 'black'};
 `
 
 export const  LongPrimer = styled.Text`

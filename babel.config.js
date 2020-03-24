@@ -23,6 +23,7 @@ module.exports = {
           store: './src/store',
           config: './src/config.js',
           utils: './src/modules/utils',
+          themes: './src/modules/theme',
           services: './src/services'
         },
       },

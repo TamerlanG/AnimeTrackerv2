@@ -2,6 +2,8 @@ import { handleActions } from 'redux-actions';
 
 import { CURRENT_SEASON, DONE, FAIL, FETCH, SEASON } from 'store/constants';
 
+import { arrayToObjectAdapter } from 'utils/helper';
+
 export const initialState = {
     current_season: {
         loading: false,
@@ -30,7 +32,7 @@ export default handleActions(
             ...state.current_season,
             loading: false,
             success: true,
-            data: payload
+            data: arrayToObjectAdapter(payload)
         }
       }),
       [CURRENT_SEASON + FETCH + FAIL]: (state, { payload }) => ({

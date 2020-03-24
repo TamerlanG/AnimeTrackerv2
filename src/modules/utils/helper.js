@@ -81,3 +81,10 @@ export function getCurrentDay(){
 export function CapitalizeString(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+
+export const arrayToObjectAdapter = (array) =>
+    array.reduce((obj, item) => {
+    obj[item.mal_id] = item
+    return obj
+    }, {})

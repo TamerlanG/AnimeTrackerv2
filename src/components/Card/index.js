@@ -8,17 +8,22 @@ import FastImage from 'react-native-fast-image'
 /* DEV */
 import { ImageCaption } from 'components/Common/Typography';
 
-export function Card({image_url, title}) {
-    return (
-        <Container>
-            <FastImage
-                style={extraStyles.image_container}
-                source={{ uri: image_url }}
-                resizeMode={FastImage.resizeMode.cover}
-            />
-            <ImageCaption>{title}</ImageCaption>
-        </Container>
-    )
+export class Card extends React.PureComponent {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        return (
+            <Container>
+                <FastImage
+                    style={extraStyles.image_container}
+                    source={{ uri: this.props.image_url }}
+                    resizeMode={FastImage.resizeMode.cover}
+                />
+                <ImageCaption>{this.props.title}</ImageCaption>
+            </Container>
+        )
+    }
 }
 
 export function HorizontalCard({image_url, title, type, score}) {
